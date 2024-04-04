@@ -1,7 +1,12 @@
 <template>
   <div>
-    <nav class="fixed top-0 left-0 w-full bg-[#977A71] text-white p-4 z-10">
-      <button @click="toggleMenu" class="block px-3 py-1 text-white">
+    <nav
+      class="fixed top-0 left-0 w-full bg-[#977A71] text-white p-4 z-50 opacity-100 flex justify-between items-center"
+    >
+      <button
+        @click="toggleMenu"
+        class="block p-2 text-white rounded-lg hover:bg-[#F6EEEE] hover:text-black"
+      >
         <svg
           class="h-8 w-8"
           fill="none"
@@ -17,45 +22,49 @@
           ></path>
         </svg>
       </button>
+      <img src="/public/logo.svg" alt="logo" width="75" height="50" />
+
+      <button @click="toggleMode" class="text-white mx-2">
+        <span v-if="!darkMode">🌞</span>
+        <span v-else>🌜</span>
+      </button>
     </nav>
 
     <div
-      class="lg:w-64 lg:bg-[#977A71] lg:flex lg:flex-col lg:justify-between lg:fixed lg:h-full lg:pt-0 lg:overflow-y-auto lg:pt-4 lg:pb-8 lg:shadow-lg lg:z-0 lg:transition-all lg:duration-300"
-      :class="{ '-left-64': !isOpen, 'left-0': isOpen }"
-      style="margin-top: 64px"
+      class="fixed top-20 left-0 w-64 h-full bg-[#977A71] text-white p-4 z-40 transform transition-transform ease-in-out duration-300 opacity-100"
+      :class="{ '-translate-x-full': !isOpen }"
     >
-      <nav class="lg:overflow-y-auto">
-        <ul class="pt-4 lg:flex lg:flex-col lg:items-stretch lg:space-y-1">
-          <li>
-            <a
-              href="#"
-              class="block lg:px-4 py-2 lg:py-1 lg:hover:bg-[#F6EEEE] lg:rounded lg:text-white hover:text-black"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block lg:px-4 py-2 lg:py-1 lg:hover:bg-[#F6EEEE] lg:rounded lg:text-white hover:text-black"
-              >Explore</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block lg:px-4 py-2 lg:py-1 lg:hover:bg-[#F6EEEE] lg:rounded lg:text-white hover:text-black"
-              >About</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block lg:px-4 py-2 lg:py-1 lg:hover:bg-[#F6EEEE] lg:rounded lg:text-white hover:text-black"
-              >Contact</a
-            >
-          </li>
-        </ul>
-      </nav>
+      <ul class="pt-4 space-y-4">
+        <li>
+          <NuxtLink
+            to="/"
+            class="block px-4 py-2 rounded-lg hover:bg-[#F6EEEE] hover:text-black"
+            >Home</NuxtLink
+          >
+        </li>
+
+        <li>
+          <NuxtLink
+            to="/explore"
+            class="block px-4 py-2 rounded-lg hover:bg-[#F6EEEE] hover:text-black"
+            >Explore</NuxtLink
+          >
+        </li>
+        <li>
+          <NuxtLink
+            to="/about"
+            class="block px-4 py-2 rounded-lg hover:bg-[#F6EEEE] hover:text-black"
+            >About</NuxtLink
+          >
+        </li>
+        <li>
+          <NuxtLink
+            to="/contact"
+            class="block px-4 py-2 rounded-lg hover:bg-[#F6EEEE] hover:text-black"
+            >Contact</NuxtLink
+          >
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -64,14 +73,34 @@
 import { ref } from "vue";
 
 const isOpen = ref(false);
+const darkMode = ref(false);
+const router = useRouter();
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
 };
+
+const toggleMode = () => {
+  darkMode.value = !darkMode.value;
+  if (darkMode.value) {
+    document.body.classList.add("dark");
+  } else {
+    document.body.classList.remove("dark");
+  }
+};
+
+onMounted(() => {
+  isOpen.value = false;
+});
+
+router.afterEach(() => {
+  isOpen.value = false;
+});
 </script>
 
-<style scoped>
-.lg\:hidden {
-  display: none;
+<style>
+.dark {
+  background-color: #111;
+  color: white;
 }
 </style>

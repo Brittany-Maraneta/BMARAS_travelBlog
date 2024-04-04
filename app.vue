@@ -1,10 +1,6 @@
 <template>
-  <div>
-    <NuxtPage />
-    <SideNav />
-  </div>
-
-  <div class="bg-[#F6EEEE] h-screen"></div>
+  <SideNav />
+  <NuxtPage />
 </template>
 
 <script setup></script>
