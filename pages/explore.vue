@@ -48,14 +48,14 @@
           <!-- Dropdown menu -->
           <div
             v-if="isDropdownOpen"
-            class="absolute top-[calc(100% + 20px)] left-0 w-full bg-white shadow-lg rounded-md z-10 my-16"
+            class="absolute top-[calc(100% + 30px)] left-0 w-[500px] bg-white shadow-lg rounded-md z-10 my-16 object-center"
           >
             <!-- Country options -->
             <div v-if="selectedOption === 'country'" class="p-4">
               <select
                 v-model="selectedCountry"
                 @change="fetchCities"
-                class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                class="w-[500px] border-gray-300 rounded-md shadow-sm focus:border-indigo-200 focus:ring focus:ring-indigo-100 focus:ring-opacity-50"
               >
                 <option disabled value="">Select a country</option>
                 <option
@@ -72,7 +72,7 @@
             <div v-else-if="selectedOption === 'city'" class="p-4">
               <select
                 v-model="selectedCity"
-                class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                class="w-[500px] border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               >
                 <option disabled value="">Select a city</option>
                 <option v-for="city in cities" :key="city.id" :value="city.id">
@@ -87,36 +87,48 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from "vue";
+import { createClient } from "@supabase/supabase-js";
+const runtimeConfig = useRuntimeConfig();
 
-export default {
-  data() {
-    return {
-      isDropdownOpen: false,
-      selectedOption: "country", // Initial option selected
-      selectedCountry: "",
-      selectedCity: "",
-      countries: [], // Data fetched from API
-      cities: [], // Data fetched from API
-    };
-  },
-  methods: {
-    toggleDropdown() {
-      this.isDropdownOpen = !this.isDropdownOpen;
-    },
-    async fetchCountries() {
-      // Make API request to fetch countries data
-      // Assign fetched data to this.countries
-    },
-    async fetchCities() {
-      // Make API request to fetch cities data based on selected country
-      // Assign fetched data to this.cities
-    },
-  },
-  mounted() {
-    // Fetch initial data on component mount
-    this.fetchCountries();
-  },
+const supabaseUrl = runtimeConfig.public.supabaseUrl;
+const supabaseKey = runtimeConfig.public.supabaseKey;
+
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+const isOpen = ref(false);
+const selectedOption = ref("country");
+const selectedCountry = ref("");
+const selectedCity = ref("");
+const countries = ref([]);
+const cities = ref([]);
+const isDropdownOpen = ref(false);
+
+const toggleDropdown = () => {
+  isOpen.value = !isOpen.value;
+};
+
+const fetchCountries = async () => {
+  // Make API request to fetch countries data
+  const { data, error } = await supabase.from("country").select("country");
+  if (error) {
+    console.error("Error fetching countries:", error.message);
+    return;
+  }
+  countries.value = data;
+};
+
+const fetchCities = async () => {
+  // Make API request to fetch cities data based on selected country
+  const { data, error } = await supabase
+    .from("city")
+    .select("city")
+    .eq("country", selectedCountry.value);
+  if (error) {
+    console.error("Error fetching cities:", error.message);
+    return;
+  }
+  cities.value = data;
 };
 </script>

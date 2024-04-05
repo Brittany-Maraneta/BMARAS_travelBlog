@@ -10,7 +10,7 @@
           <h3 class="text-lg md:text-xl lg:text-2xl xl:text-2xl text-black">To be inspired and to inspire.</h3>
           <NuxtLink to="/explore">
             <button
-    class="bg-secondary hover:bg-tri text-white font-bold py-2 px-4 rounded-2xl mt-[18px]"
+    class="bg-secondary hover:bg-tri text-white font-bold py-3 px-5 rounded-2xl mt-[18px]"
   >Explore</button>
         </NuxtLink>
         </div>
@@ -55,6 +55,7 @@
           </div>
           <div class="lg:w-1/2">
             <div class="z-10">
+         
               <h1 class="text-black text-5xl text-center font-bold my-3">The Why</h1>
               <p class="text-black text-lg leading-relaxed text-center">
                 We are travel enthusiasts that love to blog and share our experiences! <br />
@@ -66,6 +67,11 @@
     class="bg-secondary hover:bg-tri text-white font-bold py-2 px-4 rounded-2xl mt-[18px]"
   >Get to Know Us!</button>
         </NuxtLink>
+        <img
+        src="/public/logo.svg"
+        alt="logo"
+        class="text-center w-[100px] h-[100px] mx-[220px]"
+      />
               </div>
             </div>
           </div>
