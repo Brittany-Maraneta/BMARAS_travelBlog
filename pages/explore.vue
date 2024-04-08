@@ -1,134 +1,59 @@
 <template>
-  <div>
-    <header>
-      <div class="bg-lightColor py-8">
-        <div class="container mx-auto px-2 py-8 rounded-lg">
-          <div class="flex flex-col justify-center items-center sm:flex-row">
-            <img
-              src="https://media1.tenor.com/m/FMmwOqeokKQAAAAC/travel-jet.gif"
-              alt="Left"
-              class="w-full sm:w-[650px] h-[500px] sm:h-[500px] rounded-lg mr-0 sm:mr-4 my-8"
-            />
-
-            <div class="flex flex-col justify-between">
-              <div
-                class="w-32 sm:w-40 md:w-52 lg:w-64 h-32 sm:h-40 md:h-52 lg:h-64 mb-4 overflow-hidden rounded-lg sm:flex-row"
-              >
-                <img
-                  src="https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="Top Right"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div
-                class="w-32 sm:w-40 md:w-52 lg:w-64 h-32 sm:h-40 md:h-52 lg:h-64 overflow-hidden rounded-lg sm:flex-row"
-              >
-                <img
-                  src="https://media1.tenor.com/m/si459QCqaQwAAAAd/bag-pack-wanderlust.gif"
-                  alt="Bottom Right"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+  <div
+    class="container mx-auto flex flex-col md:flex-row justify-center items-cente my-28 gap-8"
+  >
+    <!-- Left Card -->
+    <div
+      class="bg-white shadow-md rounded-lg overflow-hidden w-full md:w-1/2 mb-8 md:mb-0"
+    >
+      <img
+        src="https://images.pexels.com/photos/13234849/pexels-photo-13234849.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        alt="Calgary"
+        class="w-full h-[400px] object-cover"
+      />
+      <div class="p-4">
+        <h2 class="text-xl font-bold mb-2">Explore Calgary</h2>
+        <p class="text-gray-700">
+          Calgary is a vibrant city in Alberta, Canada, known for its beautiful
+          landscapes, lively arts scene, and rich cultural heritage. Explore the
+          breathtaking Rockies, visit the Calgary Stampede, and indulge in
+          delicious local cuisine.
+        </p>
       </div>
-    </header>
-
-    <main>
-      <div class="flex justify-center">
-        <div class="flex flex-col items-center">
-          <button
-            @click="toggleDropdown"
-            class="bg-secondary text-white hover:bg-tri px-6 py-4 font-bold text-xl rounded-md focus:outline-none mt-1"
-          >
-            Discover
-          </button>
-
-          <!-- Dropdown menu -->
-          <div
-            v-if="isDropdownOpen"
-            class="absolute top-[calc(100% + 30px)] left-0 w-[500px] bg-white shadow-lg rounded-md z-10 my-16 object-center"
-          >
-            <!-- Country options -->
-            <div v-if="selectedOption === 'country'" class="p-4">
-              <select
-                v-model="selectedCountry"
-                @change="fetchCities"
-                class="w-[500px] border-gray-300 rounded-md shadow-sm focus:border-indigo-200 focus:ring focus:ring-indigo-100 focus:ring-opacity-50"
-              >
-                <option disabled value="">Select a country</option>
-                <option
-                  v-for="country in countries"
-                  :key="country.id"
-                  :value="country.id"
-                >
-                  {{ country.name }}
-                </option>
-              </select>
-            </div>
-
-            <!-- City options -->
-            <div v-else-if="selectedOption === 'city'" class="p-4">
-              <select
-                v-model="selectedCity"
-                class="w-[500px] border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              >
-                <option disabled value="">Select a city</option>
-                <option v-for="city in cities" :key="city.id" :value="city.id">
-                  {{ city.name }}
-                </option>
-              </select>
-            </div>
-          </div>
-        </div>
+    </div>
+    <!-- Right Card -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden w-full md:w-1/2">
+      <img
+        src="https://images.pexels.com/photos/63332/science-world-false-creek-vancouver-british-columbia-63332.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        alt="Vancouver"
+        class="w-full h-[400px] object-cover"
+      />
+      <div class="p-4">
+        <h2 class="text-xl font-bold mb-2">Explore Vancouver</h2>
+        <p class="text-gray-700">
+          Vancouver, located in British Columbia, Canada, offers stunning
+          natural beauty, diverse cultural experiences, and exciting outdoor
+          adventures. Discover Stanley Park, explore Granville Island, and enjoy
+          panoramic views of the city from Grouse Mountain.
+        </p>
       </div>
-    </main>
+    </div>
   </div>
+  <h2
+    class="text-center text-lg md:text-xl lg:text-2xl xl:text-3xl text-black mx-["
+  >
+    Explore through the suggestions below from food to stays and many more!
+  </h2>
+  <br />
+  <h2
+    class="text-center text-lg md:text-xl lg:text-2xl xl:text-3xl text-black mx-["
+  >
+    Click on a city below and start expanding your horizons!
+  </h2>
+
+  <DropDown class="my-6" />
+
+  <h1 class="text-5xl text-center my-11">Hello</h1>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import { createClient } from "@supabase/supabase-js";
-const runtimeConfig = useRuntimeConfig();
-
-const supabaseUrl = runtimeConfig.public.supabaseUrl;
-const supabaseKey = runtimeConfig.public.supabaseKey;
-
-const supabase = createClient(supabaseUrl, supabaseKey);
-
-const isOpen = ref(false);
-const selectedOption = ref("country");
-const selectedCountry = ref("");
-const selectedCity = ref("");
-const countries = ref([]);
-const cities = ref([]);
-const isDropdownOpen = ref(false);
-
-const toggleDropdown = () => {
-  isOpen.value = !isOpen.value;
-};
-
-const fetchCountries = async () => {
-  // Make API request to fetch countries data
-  const { data, error } = await supabase.from("country").select("country");
-  if (error) {
-    console.error("Error fetching countries:", error.message);
-    return;
-  }
-  countries.value = data;
-};
-
-const fetchCities = async () => {
-  // Make API request to fetch cities data based on selected country
-  const { data, error } = await supabase
-    .from("city")
-    .select("city")
-    .eq("country", selectedCountry.value);
-  if (error) {
-    console.error("Error fetching cities:", error.message);
-    return;
-  }
-  cities.value = data;
-};
-</script>
+<script setup></script>
