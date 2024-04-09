@@ -4,4 +4,11 @@ export default defineNuxtConfig({
   supabase: {
     redirect: false,
   },
+  families: {
+    Lobster: true,
+    Raleway: {
+      wght: [100, 400],
+      ital: [100],
+    },
+  },
 });

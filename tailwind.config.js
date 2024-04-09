@@ -18,7 +18,7 @@ export default {
         word: "#918D8D",
       },
 
-      googleFonts: {
+      fontFamily: {
         families: {
           Lobster: true,
           Raleway: true,

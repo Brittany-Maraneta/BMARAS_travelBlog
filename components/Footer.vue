@@ -17,7 +17,7 @@
 
       <div class="flex flex-col">
         <div class="font-semibold mb-2">Policies</div>
-        <a href="#" class="hover:text-black">Cookies & Privacy</a>
+        <a href="/cookies" class="hover:text-black">Cookies & Privacy</a>
         <a href="#" class="hover:text-black">Terms of Use</a>
       </div>
 
