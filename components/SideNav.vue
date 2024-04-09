@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav
-      class="fixed top-0 left-0 w-full bg-[#977A71] text-white p-4 z-50 opacity-80 flex justify-between items-center"
+      class="fixed top-0 left-0 w-full bg-[#977A71] text-white p-4 z-50 opacity-100 flex justify-between items-center"
     >
       <div class="flex items-center">
         <button
@@ -36,10 +36,18 @@
         height="50"
         class="flex-grow text-center w-6 h-11"
       />
+
+      <button>
+        <NuxtLink
+          to="/login"
+          class="block px-4 py-2 rounded-lg hover:bg-[#F6EEEE] hover:text-black"
+          >Sign In
+        </NuxtLink>
+      </button>
     </nav>
 
     <div
-      class="fixed top-20 left-0 w-64 h-full bg-[#977A71] text-white p-4 z-40 transform transition-transform ease-in-out duration-300 opacity-80"
+      class="fixed top-20 left-0 w-64 h-full bg-[#977A71] text-white p-4 z-40 transform transition-transform ease-in-out duration-300 opacity-100"
       :class="{ '-translate-x-full': !isOpen }"
     >
       <ul class="pt-4 space-y-4">

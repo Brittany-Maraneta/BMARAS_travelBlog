@@ -7,6 +7,7 @@ export default {
     "./plugins/*/.{js,ts}",
     "./app.vue",
     "./error.vue",
+    "@nuxtjs/google-fonts",
   ],
   theme: {
     extend: {
@@ -17,11 +18,13 @@ export default {
         word: "#918D8D",
       },
 
-      fontFamily: {
-        bodyText: ["Raleway", "sans-serif"],
-        titleText: ["Lobster", "sans-serif"],
+      googleFonts: {
+        families: {
+          Lobster: true,
+          Raleway: true,
+        },
       },
+      plugins: [],
     },
-    plugins: [],
   },
 };
