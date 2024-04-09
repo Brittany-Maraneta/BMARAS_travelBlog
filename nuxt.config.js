@@ -1,11 +1,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/supabase"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/supabase", "@nuxtjs/google-fonts"],
   supabase: {
-    redirectOptions: {
-      login: "/login",
-      callback: "/confirm",
-      exclude: ["/explore", "/index", "/about", "/contact"],
-    },
+    redirect: false,
   },
 });

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center">
+  <div class="flex items-center text-black">
     <template v-for="n in 5" :key="n">
       <span v-if="n <= rating">&#9733;</span>
       <span v-else>&#9734;</span>

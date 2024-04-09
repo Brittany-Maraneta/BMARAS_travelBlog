@@ -55,6 +55,7 @@
         Calgary is a city in the western Canadian province of Alberta. It's
         known for the Calgary Stampede, a massive outdoor rodeo, and festival.
       </p>
+      <Calgary />
     </div>
     <div v-else-if="selectedCity === 'Vancouver'">
       <!-- Change condition based on selected city -->
@@ -76,6 +77,7 @@
         cobblestone streets, and iconic landmarks such as the historic Château
         Frontenac.
       </p>
+      <Quebec />
     </div>
     <div v-else-if="selectedCity === 'Victoria'">
       <!-- Change condition based on selected city -->
@@ -85,6 +87,7 @@
         its charming blend of historic architecture, picturesque gardens, and
         stunning coastal views.
       </p>
+      <Victoria />
     </div>
   </div>
   <div v-if="selectedCity === 'Toronto'">
@@ -95,6 +98,7 @@
       for its towering skyscrapers, diverse neighborhoods, world-class cuisine,
       and bustling arts and entertainment scene.
     </p>
+    <Toronto />
   </div>
 </template>
 

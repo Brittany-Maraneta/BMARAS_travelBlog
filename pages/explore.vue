@@ -1,6 +1,11 @@
 <template>
+  <h1 class="text-3xl text-center mt-[115px] font-lobster">
+    Welcome to the Explore section! Go through our recommendations of our
+    favourite places within Canada!
+  </h1>
+  <h1 class="text-3xl text-center mt-4 font-lobster">Happy traveling!</h1>
   <div
-    class="container mx-auto flex flex-col md:flex-row justify-center items-centre my-28 gap-8 mt-[150px]"
+    class="container mx-auto flex flex-col md:flex-row justify-center items-centre my-28 gap-8 mt-[70px]"
   >
     <!-- Left Card -->
     <div
@@ -13,7 +18,7 @@
       />
       <div class="p-4">
         <h2 class="text-xl font-bold mb-2 text-black">Explore Calgary</h2>
-        <p class="text-gray-700">
+        <p class="text-gray-700 font-raleway">
           Calgary is a vibrant city in Alberta, Canada, known for its beautiful
           landscapes, lively arts scene, and rich cultural heritage. Explore the
           breathtaking Rockies, visit the Calgary Stampede, and indulge in
@@ -38,37 +43,11 @@
           adventures. Discover Stanley Park, explore Granville Island, and enjoy
           panoramic views of the city from Grouse Mountain.
         </p>
-       
       </div>
     </div>
   </div>
-  <br />
-
-
-  <div class="w-[95%] mx-auto">
-      <main class="flex justify-center items-center  ">
-        <div class="bg-lightColor rounded-lg p-8 lg:w-3/4 xl:w-2/3">
-          <div class="flex flex-col lg:flex-row items-center justify-center">
-            <div class="mb-8 lg:mb-0 flex justify-center">
-            <img src="https://images.pexels.com/photos/6942435/pexels-photo-6942435.jpeg?auto=compress&cs=tinysrgb&w=600" class="max-w-[300px] rounded-lg"></img>
-          </div>
-          <div>
-              <h1 class="text-black text-2xl text-center">
-                Explore through the suggestions below from food to stays and many
-              more! Click on a city below and start expanding your horizons!
-              </h1>
-              <div class="text-center lg:text-left">
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
-  
-
 
   <DropDown class="mt-[-50px]" />
-  
 </template>
 
 <script setup></script>
