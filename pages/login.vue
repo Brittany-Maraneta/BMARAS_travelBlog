@@ -1,2 +1,92 @@
-<template></template>
-<script></script>
+<template>
+  <h1 class="text-2xl my-[100px] text-center">
+    Login or Sign up and join WE TRAVEL!
+  </h1>
+  <div class="flex justify-center h-screen">
+    <div class="w-full max-w-md">
+      <div class="bg-lightColor shadow-md rounded px-10 pt-8 pb-8 mb-4">
+        <h1 class="text-xl font-semibold mb-4 text-center">WE TRAVEL</h1>
+        <form @submit.prevent="signIn">
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700 font-bold mb-2"
+              >Email:</label
+            >
+            <input
+              type="email"
+              name="email"
+              id="email"
+              v-model="email"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="password" class="block text-gray-700 font-bold mb-2"
+              >Password:</label
+            >
+            <input
+              type="password"
+              name="password"
+              id="password"
+              v-model="password"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div class="flex items-center justify-between">
+            <button
+              type="submit"
+              class="bg-secondary hover:bg-tri text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Sign In
+            </button>
+            <button
+              type="button"
+              class="bg-secondary hover:bg-tri text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              @click="signUp"
+            >
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { useRouter } from "vue-router";
+// import { useSupabaseClient } from "@/composables/useSupabaseClient";
+import { ref } from "vue";
+
+const router = useRouter();
+const supabase = useSupabaseClient();
+const email = ref("");
+const password = ref("");
+
+// Sign in info
+async function signIn() {
+  try {
+    const { error } = await supabase.auth.signIn({
+      email: email.value,
+      password: password.value,
+    });
+    if (error) throw error;
+    router.push("/index");
+  } catch (error) {
+    console.error(`Login Error: ${error}`);
+  }
+}
+
+// Sign up info
+async function signUp() {
+  try {
+    const { user, error } = await supabase.auth.signUp({
+      email: email.value,
+      password: password.value,
+    });
+    if (error) throw error;
+    router.push("/index");
+  } catch (error) {
+    console.error(`Sign Up Error: ${error}`);
+  }
+}
+</script>

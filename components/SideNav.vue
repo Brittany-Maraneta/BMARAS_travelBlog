@@ -40,7 +40,7 @@
       <button>
         <NuxtLink
           to="/login"
-          class="block px-4 py-2 rounded-lg hover:bg-[#F6EEEE] hover:text-black"
+          class="block px-4 py-2 rounded-lg hover:bg-[#F6EEEE] hover:text-black font-bold"
           >Sign In
         </NuxtLink>
       </button>
