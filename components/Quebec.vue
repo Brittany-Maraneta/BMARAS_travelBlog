@@ -44,13 +44,11 @@
         </h3>
         <StarRating :rating="4" />
         <p class="text-gray-700 h-[200px]">
-          mmerse yourself in Quebec's vibrant arts and culture scene with a
+          Immerse yourself in Quebec's vibrant arts and culture scene with a
           visit to the Musée national des beaux-arts du Québec. Home to an
           impressive collection of Canadian and international artwork, this
           museum showcases everything from traditional paintings to contemporary
-          sculptures. Explore the galleries, attend special exhibitions, and
-          gain insight into Quebec's rich artistic heritage at this renowned
-          cultural institution.
+          sculptures.
         </p>
         <p class="text-gray-700">Suggest by Wanderlust Chronicles</p>
       </div>
@@ -75,9 +73,7 @@
           UNESCO World Heritage site and one of North America's oldest
           settlements. Wander through cobblestone streets lined with
           centuries-old buildings, explore quaint shops and cafes, and soak in
-          the enchanting atmosphere of this picturesque district. Old Quebec
-          captivates visitors with its timeless beauty and cultural
-          significance.
+          the enchanting atmosphere of this picturesque district.
         </p>
         <p class="text-gray-700">Suggest by Nomadic Ventures</p>
       </div>
@@ -208,7 +204,7 @@
           Saint-Antoine, located in the heart of Old Quebec. Housed within a
           beautifully restored maritime warehouse, this boutique hotel offers
           stylish accommodations adorned with artifacts from Quebec's rich past.
-          With its acclaimed restaurant, tranquil spa, and personalized service,
+          With its acclaimed restaurant, tranquil spa, and personalized service.
         </p>
         <p class="text-gray-700">Suggest by Wanderlust Chronicles</p>
         <button class="text-gray-700">

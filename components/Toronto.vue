@@ -306,8 +306,10 @@
           Share. With numerous docking stations throughout the city, renting a
           bike is convenient and affordable. Pedal along scenic waterfront
           trails, explore bustling neighborhoods, and soak up the vibrant
-          atmosphere of Toronto's streets. Note: Availability may vary
-          seasonally.
+          atmosphere of Toronto's streets.
+          <br />
+          <br />
+          Note: Availability may vary seasonally.
         </p>
       </div>
     </div>

@@ -300,8 +300,7 @@
           frequent service, clean and modern trains, and easy connections to key
           destinations, the CTrain is a popular choice for commuters and
           tourists alike. Whether you're exploring downtown or venturing to the
-          outskirts of Calgary, the CTrain provides a reliable and affordable
-          mode of transportation.
+          outskirts of Calgary.
         </p>
       </div>
     </div>
