@@ -1,26 +1,5 @@
 <template>
-  <div class="container">
-    <div class="card">
-      <h1>Sign up to Roaming Routes</h1>
-      <form @submit.prevent="signIn">
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email" v-model="email" />
-          <div>{{ email }}</div>
-        </div>
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            v-model="password"
-          />
-          <div>{{ password }}</div>
-        </div>
-        <button class="button" @click="signIn">Sign In</button>
-        <button class="button" @click="signUp">Sign Up</button>
-      </form>
+
     </div>
   </div>
 </template>
