@@ -1,8 +1,8 @@
 <template>
   <div class="flex justify-center items-center h-screen">
     <div class="w-full max-w-md">
-      <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <h1 class="text-xl font-semibold mb-4">WE TRAVEL</h1>
+      <div class="bg-lightColor shadow-md rounded px-10 pt-8 pb-8 mb-4">
+        <h1 class="text-xl font-semibold mb-4 text-center">WE TRAVEL</h1>
         <form @submit.prevent="signIn">
           <div class="mb-4">
             <label for="email" class="block text-gray-700 font-bold mb-2"
@@ -31,13 +31,13 @@
           <div class="flex items-center justify-between">
             <button
               type="submit"
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              class="bg-secondary hover:bg-tri text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Sign In
             </button>
             <button
               type="button"
-              class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              class="bg-tri hover:bg-secondary text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               @click="signUp"
             >
               Sign Up
