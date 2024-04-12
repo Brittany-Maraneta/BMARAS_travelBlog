@@ -1,54 +1,72 @@
 <script setup></script>
 
 <template>
-    <header>
-        <img src="https://images.pexels.com/photos/9754/mountains-clouds-forest-fog.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="h-[700px] w-full rounded-xl "></img>
+  <div>
+    <div class="w-[90%] mx-auto mt-[150px] relative">
+      <header>
+        <img src="https://images.pexels.com/photos/382177/pexels-photo-382177.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="h-[700px] w-full rounded-3xl object-cover"></img>
+        <div class="absolute top-[100px] left-8 text-white">
+          <h1 class="text-3xl font-lobster text-center">We are travel enthusiasts that love to blog and share our experiences!
+          Explore through the many places travelers have shared about from activities, to food, to stays!</h1>
+
+          <div class="flex justify-center items-center h-screen">
+          <button
+            class="bg-secondary hover:bg-tri text-white font-bold py-1 px-2 rounded-2xl"
+            @click="scrollWin"
+            v-if="showButton">
+              <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="50"
+              height="50"
+              viewBox="0 0 24 24">
+              <path d="M7 10l5 5 5-5z" fill="currentColor" />
+              </svg>
+          </button>
+          </div>
+  </div>
     </header>
-
-
-   
-
+     </div>
+        </div>
+ 
     <div class="w-[95%] mx-auto">
-      <main class="flex justify-center items-center mt-32 my-32 relative">
+      <div class="flex justify-center items-center mt-32 my-32 relative">
         <div class="bg-lightColor rounded-lg p-8 flex flex-col lg:flex-row lg:items-center lg:justify-between">
           <div class="lg:w-1/2 mb-8 lg:mb-0 flex items-center justify-center">
             <iframe
-        class="h-[500px] w-full rounded-3xl object-cover"
-        src="https://www.youtube.com/embed/TknrmpS4GOg"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+            class="h-[500px] w-full rounded-3xl object-cover"
+            src="https://www.youtube.com/embed/TknrmpS4GOg"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
           </div>
-          <div class="lg:w-1/2">
-            <div class="z-10">
-              <h1 class="text-black text-4xl text-center font-bold font-lobster">Join WE TRAVEL!</h1>
-              <h1 class="text-black text-3xl text-center font-bold my-3 font-lobster mt-11">Why?</h1>
-              <p class="text-black text-lg leading-relaxed text-center font-raleway">
+            <div class="lg:w-1/2">
+              <div class="z-10">
+                <h1 class="text-black text-4xl text-center font-bold font-lobster">Join WE TRAVEL!</h1>
+                <h1 class="text-black text-3xl text-center font-bold my-3 font-lobster mt-11">Why?</h1>
+                <p class="text-black text-lg leading-relaxed text-center font-raleway">
                 You enjoy blogging! </p>
                 <p class="text-black text-lg leading-relaxed text-center font-raleway">
                 You love to share your creations, ideas and plans!
-              </p>
-              <div class="text-center mt-8">
-
-                <h1 class="text-black text-3xl text-center font-bold my-3 font-lobster">The Steps</h1>
-                <p class="text-black text-lg leading-relaxed text-center font-raleway">
-                  Go on a trip! Take lots of pictures and note recommendations!
-Join under Contact page and leave your travel place you visited and recommendations you have for that place, wait and see your recommendation/Review! &#128512;</p>
-
-<br />
-
-<p class="text-black text-lg leading-relaxed text-center font-raleway">Also create an account to be able to save recommendations from other bloggers!</p>
+                </p>
+                  
+                  <div class="text-center mt-8">
+                  <h1 class="text-black text-3xl text-center font-bold my-3 font-lobster">The Steps</h1>
+                  <p class="text-black text-lg leading-relaxed text-center font-raleway">
+                  Go on a trip!</p>  
+                  <p class="text-black text-lg leading-relaxed text-center font-raleway">Take lots of pictures and note recommendations!</p>
+                  <p class="text-black text-lg leading-relaxed text-center font-raleway">Join under Contact page and leave your travel place you visited and recommendations you have for that place, wait and see your recommendation/review! &#128512;</p>
 
 <br />
-<p>&#129321; &#127796; &#127775;</p>
+
+                  <p class="text-black text-lg leading-relaxed text-center font-raleway">Also create an account to be able to save recommendations from other bloggers!</p>
+
+<br />
+                  <p>&#129321; &#127796; &#127775;</p>
               </div>
             </div>
           </div>
         </div>
-
-       
-      </main>
+      </div>
     </div>
 
      <!-- Cards -->
@@ -71,5 +89,33 @@ Join under Contact page and leave your travel place you visited and recommendati
         </div>
       </div>
     </div>
-
 </template>
+
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const showButton = ref(false);
+
+function scroll() {
+  window.scrollBy(0, 600);
+  showButton.value = false;
+}
+
+function handleScroll() {
+  const scrollPosition = window.scrollY;
+  showButton.value = scrollPosition === 0;
+}
+
+function scrollWin() {
+  window.scrollBy(0, 660);
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
+</script>
+

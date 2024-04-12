@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Navigation bar -->
     <nav
       class="fixed top-0 left-0 w-full bg-[#977A71] text-white p-4 z-50 opacity-100 flex justify-between items-center"
     >
@@ -23,29 +24,36 @@
             ></path>
           </svg>
         </button>
+
+        <!-- Dark mode toggle button -->
         <button @click="toggleMode" class="ml-2 text-white">
           <span v-if="!darkMode">🌞</span>
           <span v-else>🌜</span>
         </button>
       </div>
 
-      <img
-        src="/public/logo.svg"
-        alt="logo"
-        width="75"
-        height="50"
-        class="flex-grow text-center w-6 h-11"
-      />
+      <!-- Logo -->
+      <div class="flex-grow flex justify-center items-center ml-24">
+        <img src="/public/logo.svg" alt="logo" class="w-20 h-20" />
+      </div>
 
-      <button>
-        <NuxtLink
-          to="/login"
-          class="block px-4 py-2 rounded-lg hover:bg-[#F6EEEE] hover:text-black font-bold"
-          >Sign In
-        </NuxtLink>
-      </button>
+      <!-- Search input -->
+      <NuxtLink to="/explore" class="flex items-center">
+        <input
+          v-model="searchQuery"
+          type="text"
+          placeholder="Search"
+          class="ml-2 p-2 rounded-lg text-black"
+        />
+        <button
+          class="bg-secondary hover:bg-lightColor hover:text-black text-white font-bold py-2 px-4 rounded-2xl"
+        >
+          Go
+        </button>
+      </NuxtLink>
     </nav>
 
+    <!-- Side menu -->
     <div
       class="fixed top-20 left-0 w-64 h-full bg-[#977A71] text-white p-4 z-40 transform transition-transform ease-in-out duration-300 opacity-100"
       :class="{ '-translate-x-full': !isOpen }"
@@ -79,17 +87,25 @@
             >Contact</NuxtLink
           >
         </li>
+        <li>
+          <NuxtLink
+            to="/login"
+            class="block px-4 py-2 rounded-lg hover:bg-[#F6EEEE] hover:text-black"
+            >Sign In</NuxtLink
+          >
+        </li>
       </ul>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { useRouter } from "vue-router";
 
 const isOpen = ref(false);
 const darkMode = ref(false);
+const searchQuery = ref("");
 const router = useRouter();
 
 const toggleMenu = () => {
@@ -105,11 +121,7 @@ const toggleMode = () => {
   }
 };
 
-onMounted(() => {
-  isOpen.value = false;
-});
-
-router.afterEach(() => {
+watch(router.currentRoute, () => {
   isOpen.value = false;
 });
 </script>

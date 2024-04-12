@@ -58,7 +58,6 @@
       <Calgary />
     </div>
     <div v-else-if="selectedCity === 'Vancouver'">
-      <!-- Change condition based on selected city -->
       <h2 class="text-4xl font-bold text-center">
         Vancouver, British Columbia
       </h2>
@@ -69,7 +68,6 @@
       <Vancouver />
     </div>
     <div v-if="selectedCity === 'Quebec City'">
-      <!-- Change condition based on selected city -->
       <h2 class="text-4xl font-bold text-center">Quebec City</h2>
       <p class="mt-2 text-center">
         Quebec City, a UNESCO World Heritage site located in the heart of
@@ -80,7 +78,6 @@
       <Quebec />
     </div>
     <div v-else-if="selectedCity === 'Victoria'">
-      <!-- Change condition based on selected city -->
       <h2 class="text-4xl font-bold text-center">Victoria</h2>
       <p class="mt-2 text-center">
         Victoria, the capital city of British Columbia, Canada, is renowned for
@@ -91,7 +88,6 @@
     </div>
   </div>
   <div v-if="selectedCity === 'Toronto'">
-    <!-- Change condition based on selected city -->
     <h2 class="text-4xl font-bold text-center">Toronto</h2>
     <p class="mt-2 text-center">
       Toronto, the vibrant and multicultural metropolis of Canada, is celebrated

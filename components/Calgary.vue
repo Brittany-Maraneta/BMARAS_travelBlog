@@ -12,6 +12,7 @@
         alt="Ha Ling Peak Hike"
         class="w-full h-[300px] object-cover"
       />
+
       <div class="p-4">
         <h2 class="text-xl font-bold mb-2 text-black font-;lobster">
           Adventure

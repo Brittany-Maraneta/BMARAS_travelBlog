@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="w-[90%] mx-auto mt-[100px] relative">
+    <div class="w-[90%] mx-auto mt-[150px] relative">
       <header>
-        <img src="https://images.pexels.com/photos/7009459/pexels-photo-7009459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="h-[700px] w-full rounded-3xl object-cover"></img>
+        <img src="https://images.pexels.com/photos/7009459/pexels-photo-7009459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="h-[700px] w-full rounded-3xl object-cover "></img>
         <div class="absolute top-[100px] left-8 text-white">
           <h1 class="text-6xl font-bold font-lobster">The Idea</h1>
           <br>

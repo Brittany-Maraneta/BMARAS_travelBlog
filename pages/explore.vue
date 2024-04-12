@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-3xl text-center mt-[115px] font-lobster">
+  <h1 class="text-3xl text-center mt-[180px] font-lobster">
     Welcome to the Explore section! Go through our recommendations of our
     favourite places within Canada!
   </h1>
@@ -48,6 +48,7 @@
   </div>
 
   <DropDown class="mt-[-50px]" />
+  <Card class="ml-[100px]" />
 </template>
 
 <script setup></script>

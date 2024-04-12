@@ -51,7 +51,6 @@
 
 <script setup>
 import { useRouter } from "vue-router";
-// import { useSupabaseClient } from "@/composables/useSupabaseClient";
 import { ref } from "vue";
 
 const router = useRouter();
@@ -67,7 +66,7 @@ async function signIn() {
       password: password.value,
     });
     if (error) throw error;
-    router.push("/index");
+    router.push("/explore");
   } catch (error) {
     console.error(`Login Error: ${error}`);
   }
@@ -81,7 +80,7 @@ async function signUp() {
       password: password.value,
     });
     if (error) throw error;
-    router.push("/index");
+    router.push("/explore");
   } catch (error) {
     console.error(`Sign Up Error: ${error}`);
   }
