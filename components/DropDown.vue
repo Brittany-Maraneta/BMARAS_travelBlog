@@ -49,52 +49,59 @@
   <!-- Dynamic area for city details -->
   <div class="mt-10">
     <div v-if="selectedCity === 'Calgary'">
-      <!-- Change condition based on selected city -->
-      <h2 class="text-4xl font-bold text-center">Calgary</h2>
-      <p class="mt-2 text-center">
+      <h2 class="text-4xl font-bold text-center font-display2">
+        Calgary, Alberta
+      </h2>
+      <p class="mt-2 text-center font-display">
         Calgary is a city in the western Canadian province of Alberta. It's
         known for the Calgary Stampede, a massive outdoor rodeo, and festival.
       </p>
-      <Calgary />
+      <Card citySelected="Calgary" />
     </div>
+
     <div v-else-if="selectedCity === 'Vancouver'">
-      <h2 class="text-4xl font-bold text-center">
+      <h2 class="text-4xl font-bold text-center font-display2">
         Vancouver, British Columbia
       </h2>
-      <p class="mt-2 text-center">
+      <p class="mt-2 text-center font-display">
         Vancouver, a bustling west coast seaport in British Columbia, is among
         Canada's densest, most ethnically diverse cities.
       </p>
-      <Vancouver />
+      <Card citySelected="Vancouver" />
     </div>
+
     <div v-if="selectedCity === 'Quebec City'">
-      <h2 class="text-4xl font-bold text-center">Quebec City</h2>
-      <p class="mt-2 text-center">
+      <h2 class="text-4xl font-bold text-center font-display2">Quebec City</h2>
+      <p class="mt-2 text-center font-display">
         Quebec City, a UNESCO World Heritage site located in the heart of
         French-speaking Canada, captivates visitors with its rich history,
         cobblestone streets, and iconic landmarks such as the historic Château
         Frontenac.
       </p>
-      <Quebec />
+      <Card citySelected="Quebec City" />
     </div>
+
     <div v-else-if="selectedCity === 'Victoria'">
-      <h2 class="text-4xl font-bold text-center">Victoria</h2>
-      <p class="mt-2 text-center">
+      <h2 class="text-4xl font-bold text-center font-display2">Victoria</h2>
+      <p class="mt-2 text-center font-display">
         Victoria, the capital city of British Columbia, Canada, is renowned for
         its charming blend of historic architecture, picturesque gardens, and
         stunning coastal views.
       </p>
-      <Victoria />
+      <Card citySelected="Victoria" />
     </div>
   </div>
+
   <div v-if="selectedCity === 'Toronto'">
-    <h2 class="text-4xl font-bold text-center">Toronto</h2>
-    <p class="mt-2 text-center">
+    <h2 class="text-4xl font-bold text-center font-display2">
+      Toronto, Ontario
+    </h2>
+    <p class="mt-2 text-center font-display">
       Toronto, the vibrant and multicultural metropolis of Canada, is celebrated
       for its towering skyscrapers, diverse neighborhoods, world-class cuisine,
       and bustling arts and entertainment scene.
     </p>
-    <Toronto />
+    <Card citySelected="Toronto" />
   </div>
 </template>
 
@@ -136,3 +143,13 @@ const { data: city } = await useAsyncData("city", async () => {
   }
 });
 </script>
+
+<style scoped>
+.font-display {
+  font-family: "Raleway";
+}
+
+.font-display2 {
+  font-family: "Lobster";
+}
+</style>

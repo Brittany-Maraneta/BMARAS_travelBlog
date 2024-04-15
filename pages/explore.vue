@@ -48,7 +48,6 @@
   </div>
 
   <DropDown class="mt-[-50px] mb-[50px]" />
-  <Card class="ml-[100px]" />
 </template>
 
 <script setup></script>
