@@ -10,21 +10,23 @@
 
     <div class="flex space-x-12">
       <div class="flex flex-col">
-        <div class="font-semibold mb-2">Company</div>
-        <a href="/about" class="hover:text-black">About</a>
-        <a href="/contact" class="hover:text-black">Contact</a>
+        <div class="font-semibold mb-2 font-display2 text-2xl">Company</div>
+        <a href="/about" class="hover:text-black font-mono">About</a>
+        <a href="/contact" class="hover:text-black font-mono">Contact</a>
       </div>
 
       <div class="flex flex-col">
-        <div class="font-semibold mb-2">Policies</div>
-        <a href="/cookies" class="hover:text-black">Cookies & Privacy</a>
-        <a href="/terms" class="hover:text-black">Terms of Use</a>
+        <div class="font-semibold mb-2 font-display2 text-2xl">Policies</div>
+        <a href="/cookies" class="hover:text-black font-mono"
+          >Cookies & Privacy</a
+        >
+        <a href="/terms" class="hover:text-black font-mono">Terms of Use</a>
       </div>
 
       <div class="flex flex-col">
-        <div class="font-semibold mb-2">Help</div>
-        <a href="/contact" class="hover:text-black">Support</a>
-        <a href="/login" class="hover:text-black">Sign In</a>
+        <div class="font-semibold mb-2 font-display2 text-2xl">Help</div>
+        <a href="/contact" class="hover:text-black font-mono">Support</a>
+        <a href="/login" class="hover:text-black font-mono">Sign In</a>
       </div>
     </div>
 
@@ -40,8 +42,18 @@
       </a>
     </div>
 
-    <div class="mt-14">&copy; 2024: WE TRAVEL</div>
+    <div class="mt-14 font-display">&copy; 2024: WE TRAVEL</div>
   </footer>
 </template>
 
 <script setup></script>
+
+<style scoped>
+.font-display {
+  font-family: "Raleway";
+}
+
+.font-display2 {
+  font-family: "Lobster";
+}
+</style>

@@ -18,12 +18,10 @@ export default {
         word: "#918D8D",
       },
 
-      fontFamily: {
-        families: {
-          Lobster: true,
-          Raleway: true,
-        },
+      families: {
+        raleway: ['"Raleway-100"'],
       },
+
       plugins: [],
     },
   },

@@ -38,15 +38,17 @@
       </div>
 
       <!-- Search input -->
+
+      <input
+        v-model="searchQuery"
+        type="text"
+        placeholder="Search"
+        class="ml-2 p-2 rounded-lg text-black"
+        @click="clearSearch"
+      />
       <NuxtLink to="/explore" class="flex items-center">
-        <input
-          v-model="searchQuery"
-          type="text"
-          placeholder="Search"
-          class="ml-2 p-2 rounded-lg text-black"
-        />
         <button
-          class="bg-secondary hover:bg-lightColor hover:text-black text-white font-bold py-2 px-4 rounded-2xl"
+          class="bg-secondary hover:bg-lightColor hover:text-black text-white font-bold py-2 px-4 rounded-2xl font-mono"
         >
           Go
         </button>
@@ -55,7 +57,7 @@
 
     <!-- Side menu -->
     <div
-      class="fixed top-20 left-0 w-64 h-full bg-[#977A71] text-white p-4 z-40 transform transition-transform ease-in-out duration-300 opacity-100"
+      class="fixed top-20 left-0 w-64 h-full bg-[#977A71] text-white p-4 z-40 transform transition-transform ease-in-out duration-300 opacity-100 font-mono"
       :class="{ '-translate-x-full': !isOpen }"
     >
       <ul class="pt-4 space-y-4">
@@ -91,7 +93,7 @@
           <NuxtLink
             to="/login"
             class="block px-4 py-2 rounded-lg hover:bg-[#F6EEEE] hover:text-black"
-            >Sign In</NuxtLink
+            >Login</NuxtLink
           >
         </li>
       </ul>
@@ -126,9 +128,17 @@ watch(router.currentRoute, () => {
 });
 </script>
 
-<style>
+<style scoped>
 .dark {
   background-color: #111;
   color: white;
+}
+
+.font-display {
+  font-family: "Raleway";
+}
+
+.font-display2 {
+  font-family: "Lobster";
 }
 </style>

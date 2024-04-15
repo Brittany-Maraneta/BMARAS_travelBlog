@@ -6,12 +6,14 @@
       <header>
         <img src="https://images.pexels.com/photos/382177/pexels-photo-382177.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="h-[700px] w-full rounded-3xl object-cover"></img>
         <div class="absolute top-[100px] left-8 text-white">
-          <h1 class="text-3xl font-lobster text-center">We are travel enthusiasts that love to blog and share our experiences!
+          <h1 class="text-4xl font-display2 text-center
+          ">Who is WE TRAVEL?</h1>
+          <h1 class="text-2xl font-display text-center font-bold ">We are travel enthusiasts that love to blog and share our experiences!
           Explore through the many places travelers have shared about from activities, to food, to stays!</h1>
 
           <div class="flex justify-center items-center h-screen">
           <button
-            class="bg-secondary hover:bg-tri text-white font-bold py-1 px-2 rounded-2xl"
+            class="bg-secondary hover:bg-tri text-white py-1 px-2 rounded-2xl"
             @click="scrollWin"
             v-if="showButton">
               <svg
@@ -41,24 +43,24 @@
           </div>
             <div class="lg:w-1/2">
               <div class="z-10">
-                <h1 class="text-black text-4xl text-center font-bold font-lobster">Join WE TRAVEL!</h1>
-                <h1 class="text-black text-3xl text-center font-bold my-3 font-lobster mt-11">Why?</h1>
-                <p class="text-black text-lg leading-relaxed text-center font-raleway">
+                <h1 class="text-black text-4xl text-center font-display2">Join WE TRAVEL!</h1>
+                <h1 class="text-black text-3xl text-center my-3 font-display2 mt-11">Why?</h1>
+                <p class="text-black text-lg leading-relaxed text-center font-display">
                 You enjoy blogging! </p>
-                <p class="text-black text-lg leading-relaxed text-center font-raleway">
+                <p class="text-black text-lg leading-relaxed text-center font-display">
                 You love to share your creations, ideas and plans!
                 </p>
                   
                   <div class="text-center mt-8">
-                  <h1 class="text-black text-3xl text-center font-bold my-3 font-lobster">The Steps</h1>
-                  <p class="text-black text-lg leading-relaxed text-center font-raleway">
+                  <h1 class="text-black text-3xl text-center my-3 font-display2">The Steps</h1>
+                  <p class="text-black text-lg leading-relaxed text-center font-display">
                   Go on a trip!</p>  
-                  <p class="text-black text-lg leading-relaxed text-center font-raleway">Take lots of pictures and note recommendations!</p>
-                  <p class="text-black text-lg leading-relaxed text-center font-raleway">Join under Contact page and leave your travel place you visited and recommendations you have for that place, wait and see your recommendation/review! &#128512;</p>
+                  <p class="text-black text-lg leading-relaxed text-center font-display">Take lots of pictures and note recommendations!</p>
+                  <p class="text-black text-lg leading-relaxed text-center font-display">Join under Contact page and leave your travel place you visited and recommendations you have for that place, wait and see your recommendation/review! &#128512;</p>
 
 <br />
 
-                  <p class="text-black text-lg leading-relaxed text-center font-raleway">Also create an account to be able to save recommendations from other bloggers!</p>
+                  <p class="text-black text-lg leading-relaxed text-center font-display">Also create an account to be able to save recommendations from other bloggers!</p>
 
 <br />
                   <p>&#129321; &#127796; &#127775;</p>
@@ -119,3 +121,12 @@ onUnmounted(() => {
 });
 </script>
 
+<style scoped>
+.font-display {
+  font-family: 'Raleway'
+}
+
+.font-display2 {
+  font-family:'Lobster'
+}
+</style>

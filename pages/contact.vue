@@ -5,7 +5,7 @@
     <div class="w-3/5 px-4 py-8 bg-lightColor rounded-lg shadow-lg">
       <div class="flex justify-center flex-col md:flex-row">
         <div class="w-full md:w-1/2 pr-0 md:pr-4 mb-8 md:mb-0">
-          <h2 class="text-2xl font-semibold mb-4 text-center">
+          <h2 class="text-2xl font-semibold mb-4 text-center font-display">
             Join the community or Contact us with questions!
           </h2>
           <form @submit.prevent="submitForm">
@@ -45,19 +45,19 @@
             <div class="flex justify-between mb-4">
               <div class="w-1/2 pr-2">
                 <div class="bg-tri p-4 rounded-lg">
-                  <h3 class="text-xl mb-4 text-center">Photos</h3>
+                  <h3 class="text-xl mb-4 text-center font-mono">Photos</h3>
                 </div>
               </div>
               <div class="w-1/2 pl-2">
                 <div class="bg-tri p-4 rounded-lg">
-                  <h3 class="text-xl mb-4 text-center">Itinerary</h3>
+                  <h3 class="text-xl mb-4 text-center font-mono">Itinerary</h3>
                 </div>
               </div>
             </div>
             <div class="flex justify-center md:justify-start mb-4">
               <button
                 type="submit"
-                class="bg-secondary text-white px-4 py-2 rounded-md hover:bg-tri transition duration-300"
+                class="bg-secondary text-white px-4 py-2 rounded-md hover:bg-tri transition duration-300 font-mono"
               >
                 Submit
               </button>
@@ -76,13 +76,13 @@
               class="w-40 h-40 mt-8"
             />
 
-            <div class="text-center md:text-left mt-4">
+            <div class="text-center md:text-left mt-4 font-display">
               <p class="mt-4">
                 Thank you for joining WE TRAVEL! We look forward to sharing your
                 travel recommendations to the world! Don't forget to share your
                 favorite pictures and videos that go with the Itinerary!
               </p>
-              <p class="mt-4">
+              <p class="mt-4 font-display">
                 If you have any concerns or questions feel free to use the same
                 contact area!
               </p>
@@ -107,3 +107,13 @@ const submitForm = () => {
   console.log("Form submitted:", formData.value);
 };
 </script>
+
+<style scoped>
+.font-display {
+  font-family: "Raleway";
+}
+
+.font-display2 {
+  font-family: "Lobster";
+}
+</style>

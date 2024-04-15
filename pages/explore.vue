@@ -1,9 +1,9 @@
 <template>
-  <h1 class="text-3xl text-center mt-[180px] font-lobster">
+  <h1 class="text-4xl text-center mt-[180px] font-display2">
     Welcome to the Explore section! Go through our recommendations of our
     favourite places within Canada!
   </h1>
-  <h1 class="text-3xl text-center mt-4 font-lobster">Happy traveling!</h1>
+  <h1 class="text-3xl text-center mt-4 font-display2">Happy traveling!</h1>
   <div
     class="container mx-auto flex flex-col md:flex-row justify-center items-centre my-28 gap-8 mt-[70px]"
   >
@@ -47,8 +47,18 @@
     </div>
   </div>
 
-  <DropDown class="mt-[-50px]" />
+  <DropDown class="mt-[-50px] mb-[50px]" />
   <Card class="ml-[100px]" />
 </template>
 
 <script setup></script>
+
+<style scoped>
+.font-display {
+  font-family: "Raleway";
+}
+
+.font-display2 {
+  font-family: "Lobster";
+}
+</style>
