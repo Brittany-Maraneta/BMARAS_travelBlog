@@ -11,6 +11,33 @@
       </button>
     </h1>
   </div>
+
+  <h1 class="text-2xl font-display2 mb-4 mt-[100px] text-center">
+    Comment Section!
+  </h1>
+  <h2 class="text-xl font-display mb-4 text-center">
+    Comment below what you want to see on this website!
+  </h2>
+  <div class="flex flex-col items-center">
+    <textarea
+      v-model="commentText"
+      rows="4"
+      cols="50"
+      placeholder="Enter your comment here"
+      class="bg-lightColor"
+    ></textarea>
+    <button @click="submitComment">Submit</button>
+  </div>
+  <h1 class="text-2xl font-display2 mb-4 mt-[120px] text-center">Comments!</h1>
+  <div
+    v-for="comment in comments"
+    :key="comment.id"
+    class="text-center mt-[70px]"
+  >
+    <p>{{ comment.comments }}</p>
+    <p class="mb-[50px]">{{ comment.created_at }}</p>
+  </div>
+
   <h1 class="text-xl font-display mb-4 mt-[100px] text-center">
     You now have access to favourite recommendations to save for future travel!
 
@@ -22,8 +49,12 @@
       </button>
     </NuxtLink>
   </h1>
+  <h1 class="text-2xl mt-[20px] text-center font-display2">My Favourites</h1>
+  <h2 class="text-2xl mt-[20px] text-center font-display">
+    Coming Soon ... You will be able to favourite recommendations with your
+    account!
+  </h2>
 
-  <h1 class="text-2xl mt-[100px] text-center font-display2">My Favourites</h1>
   <div class="w-[95%] mx-auto mt-2 flex justify-center mb-[100px]">
     <div class="flex flex-col md:flex-row md:space-x-4">
       <!-- Card 1 -->
@@ -33,11 +64,6 @@
           alt="Card 1 - Canada"
           class="w-full h-[300px] rounded-lg object-cover"
         />
-        <div
-          class="absolute inset-0 flex flex-col justify-center items-center p-4 bg-opacity-25 bg-white rounded-lg"
-        >
-          <h2 class="text-white text-xl font-bold font-mono">Explore Canada</h2>
-        </div>
       </div>
 
       <!-- Card 2 -->
@@ -49,13 +75,6 @@
           alt="Card 2 - America"
           class="w-full h-[300px] rounded-lg object-cover"
         />
-        <div
-          class="absolute inset-0 flex flex-col justify-center items-center p-4 bg-opacity-25 bg-white rounded-lg font-serif"
-        >
-          <h2 class="text-black text-xl font-bold font-mono">
-            Explore America
-          </h2>
-        </div>
       </div>
 
       <!-- Card 3 -->
@@ -67,25 +86,57 @@
           alt="Card 3- Mexico"
           class="w-full h-[300px] rounded-lg object-cover"
         />
-        <div
-          class="absolute inset-0 flex flex-col justify-center items-center p-4 bg-opacity-25 bg-white rounded-lg"
-        >
-          <h2 class="text-white text-xl font-bold font-mono">Explore Mexico</h2>
-        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-const user = useSupabaseUser();
-const client = useSupabaseClient();
+import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
+// import { useSupabaseUser, useSupabaseClient } from "@briandavis/vue-supabase";
 const router = useRouter();
 
-// Sign out section
+const user = useSupabaseUser();
+const supabase = useSupabaseClient();
+const commentText = ref("");
+const comments = ref([]);
+
+const submitComment = async () => {
+  try {
+    const { data, error } = await supabase
+      .from("we_travel_users")
+      .insert([{ comments: commentText.value }]);
+    if (error) {
+      console.error("Error submitting comment:", error.message);
+      return;
+    }
+    console.log("Comment submitted successfully");
+    commentText.value = "";
+    fetchComments(); // Refresh comments after submission
+  } catch (error) {
+    console.error("Error submitting comment:", error.message);
+  }
+};
+
+const fetchComments = async () => {
+  try {
+    const { data, error } = await supabase.from("we_travel_users").select("*");
+    if (error) {
+      console.error("Error fetching comments:", error.message);
+      return;
+    }
+    comments.value = data;
+  } catch (error) {
+    console.error("Error fetching comments:", error.message);
+  }
+};
+
+onMounted(fetchComments);
+
 async function signOut() {
   try {
-    let { error } = await client.auth.signOut();
+    let { error } = await supabase.auth.signOut();
     if (error) throw error;
     router.push("/login");
   } catch (error) {
