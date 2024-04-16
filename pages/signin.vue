@@ -121,16 +121,11 @@ const comments = ref([]);
 
 const submitComment = async () => {
   try {
+    const createdAt = new Date().toISOString(); // Get current timestamp
     const { data, error } = await supabase
       .from("we_travel_users")
-      .insert([{ comments: commentText.value }]);
-    if (error) {
-      console.error("Error submitting comment:", error.message);
-      return;
-    }
-    console.log("Comment submitted successfully");
-    commentText.value = "";
-    fetchComments();
+      .insert([{ comments: commentText.value, created_at: createdAt }]);
+    // Rest of your code...
   } catch (error) {
     console.error("Error submitting comment:", error.message);
   }
