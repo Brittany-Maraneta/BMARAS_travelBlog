@@ -1,4 +1,5 @@
 <template>
+  <!-- Header Section -->
   <h1 class="text-4xl text-center mt-[180px] font-display2">
     Welcome to the Explore section! Go through our recommendations of our
     favourite places within Canada!

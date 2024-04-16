@@ -53,7 +53,7 @@
       </div>
     </div>
   
-
+    <!-- About Card -->
     <div class="w-[95%] mx-auto">
       <main class="flex justify-center items-center mt-32 my-32 relative">
         <div class="bg-lightColor rounded-lg p-8 flex flex-col lg:flex-row lg:items-center lg:justify-between">

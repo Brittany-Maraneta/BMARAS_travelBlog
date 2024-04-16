@@ -1,4 +1,5 @@
 <template>
+  <!-- contact box section that links to email after submission -->
   <div
     class="flex justify-center items-center h-[1000px] pt-[600px] pb-[350px] md:pt-0 md:pb-0"
   >

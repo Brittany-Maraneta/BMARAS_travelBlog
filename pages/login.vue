@@ -1,5 +1,10 @@
 <template>
-  <div class="flex justify-center items-center h-screen">
+  <h1 class="mt-[200px] text-center font-display2 text-2xl mb-[100px]">
+    Join WE TRAVEL to be able to connect with the travel community!
+  </h1>
+
+  <!-- Sign in Section -->
+  <div class="flex justify-center h-screen">
     <div class="w-full max-w-md">
       <div class="bg-lightColor shadow-md rounded px-10 pt-8 pb-8 mb-4">
         <h1 class="text-3xl mb-4 text-center font-display2">WE TRAVEL</h1>

@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <div>
     <div class="w-[90%] mx-auto mt-[150px] relative">
@@ -55,7 +53,7 @@
                   <p class="text-black text-lg leading-relaxed text-center font-display">
                   Go on a trip!</p>  
                   <p class="text-black text-lg leading-relaxed text-center font-display">Take lots of pictures and note recommendations!</p>
-                  <p class="text-black text-lg leading-relaxed text-center font-display">Go to the Contact page and leave your travel location and recommendations you have for that place!</p> 
+                  <p class="text-black text-lg leading-relaxed text-center font-display">Go to the <NuxtLink to="/contact">Contact page </NuxtLink> and leave your travel location and recommendations you have for that place!</p> 
                   <p class="text-black text-lg leading-relaxed text-center font-display">Wait and see your recommendation/review! &#128512;</p>
 
 <br />
