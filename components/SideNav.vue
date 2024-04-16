@@ -37,7 +37,7 @@
       <input
         v-model="searchQuery"
         type="text"
-        placeholder="Search"
+        placeholder="Search for a City"
         class="ml-2 p-2 rounded-lg text-black"
       />
 
