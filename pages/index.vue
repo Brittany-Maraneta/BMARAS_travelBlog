@@ -22,30 +22,37 @@
       <div class="flex flex-col md:flex-row md:space-x-4">
 
         <!-- Card 1 -->
+        <NuxtLink to="/explore">
         <div class="bg-lightColor rounded-lg overflow-hidden flex-1/3 relative">
           <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1/300" alt="Card 1 - Canada" class="w-full h-[300px] rounded-lg object-cover">
           <div class="absolute inset-0 flex flex-col justify-center items-center p-4 bg-opacity-25 bg-white rounded-lg">
             <h2 class="text-white text-xl font-bold font-mono">Explore Canada</h2>
           </div>
         </div>
+        </NuxtLink>
 
         <!-- Card 2 -->
+        <NuxtLink to="/explore">
         <div class="bg-lightColor rounded-lg overflow-hidden flex-1/3 mt-4 md:mt-0 relative">
           <img src="https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Card 2 - America" class="w-full h-[300px] rounded-lg object-cover">
           <div class="absolute inset-0 flex flex-col justify-center items-center p-4 bg-opacity-25 bg-white rounded-lg font-mono">
             <h2 class="text-black text-xl font-bold">Explore America</h2>
           </div>
         </div>
+        </NuxtLink>
 
         <!-- Card 3 -->
+        <NuxtLink to="/explore">
         <div class="bg-lightColor rounded-lg overflow-hidden flex-1/3 mt-4 md:mt-0 relative">
           <img src="https://images.pexels.com/photos/5703115/pexels-photo-5703115.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Card 3- Mexico" class="w-full h-[300px] rounded-lg object-cover">
           <div class="absolute inset-0 flex flex-col justify-center items-center p-4 bg-opacity-25 bg-white rounded-lg">
             <h2 class="text-white text-xl font-bold font-mono">Explore Mexico</h2>
           </div> 
         </div>
+        </NuxtLink>
       </div>
     </div>
+  
 
     <div class="w-[95%] mx-auto">
       <main class="flex justify-center items-center mt-32 my-32 relative">

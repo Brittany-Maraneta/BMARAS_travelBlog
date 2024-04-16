@@ -8,7 +8,7 @@
           type="button"
           class="bg-secondary hover:bg-tri text-white font-bold py-6 px-12 rounded-2xl mt-[18px] flex items-center"
         >
-          <span class="mr-2">{{ selectedOption }}</span>
+          <span class="mr-2 font-mono">{{ selectedOption }}</span>
           <svg
             class="h-5 w-5"
             xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@
           <template v-if="isDesiredCity(city.city)">
             <button
               @click="selectOption(city.city)"
-              class="block px-4 py-2 text-sm text-gray-700 hover:bg-lightColor w-full text-left"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-lightColor w-full text-left font-mono"
               role="menuitem"
             >
               {{ city.city }}
@@ -49,10 +49,10 @@
   <!-- Dynamic area for city details -->
   <div class="mt-10">
     <div v-if="selectedCity === 'Calgary'">
-      <h2 class="text-4xl font-bold text-center font-display2">
+      <h2 class="text-5xl font-bold text-center font-display2">
         Calgary, Alberta
       </h2>
-      <p class="mt-2 text-center font-display">
+      <p class="mt-2 max-w-4xl mx-auto text-center font-display text-xl">
         Calgary is a city in the western Canadian province of Alberta. It's
         known for the Calgary Stampede, a massive outdoor rodeo, and festival.
       </p>
@@ -60,10 +60,10 @@
     </div>
 
     <div v-else-if="selectedCity === 'Vancouver'">
-      <h2 class="text-4xl font-bold text-center font-display2">
+      <h2 class="text-5xl font-bold text-center font-display2">
         Vancouver, British Columbia
       </h2>
-      <p class="mt-2 text-center font-display">
+      <p class="mt-2 max-w-4xl mx-auto text-center font-display text-xl">
         Vancouver, a bustling west coast seaport in British Columbia, is among
         Canada's densest, most ethnically diverse cities.
       </p>
@@ -71,8 +71,8 @@
     </div>
 
     <div v-if="selectedCity === 'Quebec City'">
-      <h2 class="text-4xl font-bold text-center font-display2">Quebec City</h2>
-      <p class="mt-2 text-center font-display">
+      <h2 class="text-5xl font-bold text-center font-display2">Quebec City</h2>
+      <p class="mt-2 max-w-4xl mx-auto text-center font-display text-xl">
         Quebec City, a UNESCO World Heritage site located in the heart of
         French-speaking Canada, captivates visitors with its rich history,
         cobblestone streets, and iconic landmarks such as the historic Château
@@ -82,8 +82,8 @@
     </div>
 
     <div v-else-if="selectedCity === 'Victoria'">
-      <h2 class="text-4xl font-bold text-center font-display2">Victoria</h2>
-      <p class="mt-2 text-center font-display">
+      <h2 class="text-5xl font-bold text-center font-display2">Victoria</h2>
+      <p class="mt-2 max-w-4xl mx-auto text-center font-display text-xl">
         Victoria, the capital city of British Columbia, Canada, is renowned for
         its charming blend of historic architecture, picturesque gardens, and
         stunning coastal views.
@@ -93,10 +93,10 @@
   </div>
 
   <div v-if="selectedCity === 'Toronto'">
-    <h2 class="text-4xl font-bold text-center font-display2">
+    <h2 class="text-5xl font-bold text-center font-display2">
       Toronto, Ontario
     </h2>
-    <p class="mt-2 text-center font-display">
+    <p class="mt-2 max-w-4xl mx-auto text-center font-display text-xl">
       Toronto, the vibrant and multicultural metropolis of Canada, is celebrated
       for its towering skyscrapers, diverse neighborhoods, world-class cuisine,
       and bustling arts and entertainment scene.
@@ -108,6 +108,14 @@
 <script setup>
 import { ref } from "vue";
 
+const props = defineProps({
+  citySearched: {
+    required: true,
+  },
+});
+
+let citySearched = ref(props.citySearched);
+
 const isOpen = ref(false);
 const selectedOption = ref("Choose a City");
 const desiredCities = [
@@ -117,7 +125,11 @@ const desiredCities = [
   "Quebec City",
   "Toronto",
 ];
-const selectedCity = ref("");
+let selectedCity = ref("");
+console.log("Debug", citySearched);
+if (citySearched != null) {
+  selectedCity = citySearched;
+}
 
 const toggleDropdown = () => {
   isOpen.value = !isOpen.value;

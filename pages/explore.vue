@@ -17,8 +17,10 @@
         class="w-full h-[400px] object-cover"
       />
       <div class="p-4">
-        <h2 class="text-xl font-bold mb-2 text-black">Explore Calgary</h2>
-        <p class="text-gray-700 font-raleway">
+        <h2 class="text-xl font-bold mb-2 text-black font-display2">
+          Explore Calgary
+        </h2>
+        <p class="text-gray-700 font-display">
           Calgary is a vibrant city in Alberta, Canada, known for its beautiful
           landscapes, lively arts scene, and rich cultural heritage. Explore the
           breathtaking Rockies, visit the Calgary Stampede, and indulge in
@@ -36,8 +38,10 @@
         class="w-full h-[400px] object-cover"
       />
       <div class="p-4">
-        <h2 class="text-xl font-bold mb-2 text-black">Explore Vancouver</h2>
-        <p class="text-gray-700">
+        <h2 class="text-xl font-bold mb-2 text-black font-display2">
+          Explore Vancouver
+        </h2>
+        <p class="text-gray-700 font-display">
           Vancouver, located in British Columbia, Canada, offers stunning
           natural beauty, diverse cultural experiences, and exciting outdoor
           adventures. Discover Stanley Park, explore Granville Island, and enjoy
@@ -47,10 +51,19 @@
     </div>
   </div>
 
-  <DropDown class="mt-[-50px] mb-[50px]" />
+  <DropDown class="mt-[-50px] mb-[50px]" :citySearched="searchString" />
 </template>
 
-<script setup></script>
+<script setup>
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+const route = useRequestURL();
+let searchString = route.search;
+searchString = searchString.replace("?query=", "");
+searchString = capitalizeFirstLetter(searchString);
+</script>
 
 <style scoped>
 .font-display {

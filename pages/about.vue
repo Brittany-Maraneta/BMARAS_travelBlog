@@ -4,16 +4,15 @@
   <div>
     <div class="w-[90%] mx-auto mt-[150px] relative">
       <header>
-        <img src="https://images.pexels.com/photos/382177/pexels-photo-382177.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="h-[700px] w-full rounded-3xl object-cover"></img>
-        <div class="absolute top-[100px] left-8 text-white">
-          <h1 class="text-4xl font-display2 text-center
+        <img src="https://images.pexels.com/photos/382177/pexels-photo-382177.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="h-[700px] w-full rounded-3xl object-cover" alt="Header img"></img>
+        <div class="absolute top-[40px] inset-x-0 text-white flex flex-col items-center">
+          <h1 class="text-5xl font-display2 text-center
           ">Who is WE TRAVEL?</h1>
-          <h1 class="text-2xl font-display text-center font-bold ">We are travel enthusiasts that love to blog and share our experiences!
-          Explore through the many places travelers have shared about from activities, to food, to stays!</h1>
+          <h1 class="text-2xl font-display text-center font-bold mt-8 max-w-4xl mx-auto">We are travel enthusiasts that love to blog and share our experiences! Explore through the many places travelers have shared about from activities, to food, to stays!</h1>
 
           <div class="flex justify-center items-center h-screen">
           <button
-            class="bg-secondary hover:bg-tri text-white py-1 px-2 rounded-2xl"
+            class="bg-secondary hover:bg-tri text-white py-1 px-2 rounded-2xl "
             @click="scrollWin"
             v-if="showButton">
               <svg
@@ -56,7 +55,8 @@
                   <p class="text-black text-lg leading-relaxed text-center font-display">
                   Go on a trip!</p>  
                   <p class="text-black text-lg leading-relaxed text-center font-display">Take lots of pictures and note recommendations!</p>
-                  <p class="text-black text-lg leading-relaxed text-center font-display">Join under Contact page and leave your travel place you visited and recommendations you have for that place, wait and see your recommendation/review! &#128512;</p>
+                  <p class="text-black text-lg leading-relaxed text-center font-display">Go to the Contact page and leave your travel location and recommendations you have for that place!</p> 
+                  <p class="text-black text-lg leading-relaxed text-center font-display">Wait and see your recommendation/review! &#128512;</p>
 
 <br />
 

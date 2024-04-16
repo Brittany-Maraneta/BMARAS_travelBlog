@@ -24,31 +24,26 @@
             ></path>
           </svg>
         </button>
-
-        <!-- Dark mode toggle button -->
-        <button @click="toggleMode" class="ml-2 text-white">
-          <span v-if="!darkMode">🌞</span>
-          <span v-else>🌜</span>
-        </button>
       </div>
 
       <!-- Logo -->
       <div class="flex-grow flex justify-center items-center ml-24">
-        <img src="/public/logo.svg" alt="logo" class="w-20 h-20" />
+        <NuxtLink to="/">
+          <img src="/public/logo.svg" alt="logo" class="w-20 h-20" />
+        </NuxtLink>
       </div>
 
       <!-- Search input -->
-
       <input
         v-model="searchQuery"
         type="text"
         placeholder="Search"
         class="ml-2 p-2 rounded-lg text-black"
-        @click="clearSearch"
       />
-      <NuxtLink to="/explore" class="flex items-center">
+
+      <NuxtLink :to="`/explore?query=${searchQuery}`" class="flex items-center">
         <button
-          class="bg-secondary hover:bg-lightColor hover:text-black text-white font-bold py-2 px-4 rounded-2xl font-mono"
+          class="bg-secondary hover:bg-lightColor hover:text-black text-white font-bold py-2 px-3 rounded-2xl font-mono ml-3"
         >
           Go
         </button>
@@ -110,35 +105,20 @@ const darkMode = ref(false);
 const searchQuery = ref("");
 const router = useRouter();
 
+// Function to toggle the side menu
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
 };
 
-const toggleMode = () => {
-  darkMode.value = !darkMode.value;
-  if (darkMode.value) {
-    document.body.classList.add("dark");
-  } else {
-    document.body.classList.remove("dark");
-  }
+// Function to clear the search query when input is clicked
+const clearSearch = () => {
+  searchQuery.value = "";
 };
 
 watch(router.currentRoute, () => {
+  // Close the menu when route changes
   isOpen.value = false;
 });
 </script>
 
-<style scoped>
-.dark {
-  background-color: #111;
-  color: white;
-}
-
-.font-display {
-  font-family: "Raleway";
-}
-
-.font-display2 {
-  font-family: "Lobster";
-}
-</style>
+<style scoped></style>

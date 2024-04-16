@@ -8,7 +8,7 @@
           <h2 class="text-2xl font-semibold mb-4 text-center font-display">
             Join the community or Contact us with questions!
           </h2>
-          <form @submit.prevent="submitForm">
+          <form @submit.prevent="sendEmail">
             <div class="mb-4">
               <label for="name" class="block text-black font-medium"
                 >Name:</label
@@ -18,6 +18,7 @@
                 id="name"
                 v-model="formData.name"
                 class="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:bg-tri"
+                required
               />
             </div>
             <div class="mb-4">
@@ -29,6 +30,7 @@
                 id="email"
                 v-model="formData.email"
                 class="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:bg-tri"
+                required
               />
             </div>
             <div class="mb-4">
@@ -40,20 +42,30 @@
                 v-model="formData.message"
                 rows="4"
                 class="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:bg-tri"
+                required
               ></textarea>
             </div>
+
             <div class="flex justify-between mb-4">
               <div class="w-1/2 pr-2">
                 <div class="bg-tri p-4 rounded-lg">
-                  <h3 class="text-xl mb-4 text-center font-mono">Photos</h3>
+                  <button>
+                    <h3 class="text-xl mb-4 text-center font-mono">Photos</h3>
+                  </button>
                 </div>
               </div>
+
               <div class="w-1/2 pl-2">
                 <div class="bg-tri p-4 rounded-lg">
-                  <h3 class="text-xl mb-4 text-center font-mono">Itinerary</h3>
+                  <button>
+                    <h3 class="text-xl mb-4 text-center font-mono">
+                      Itinerary
+                    </h3>
+                  </button>
                 </div>
               </div>
             </div>
+
             <div class="flex justify-center md:justify-start mb-4">
               <button
                 type="submit"
@@ -75,7 +87,6 @@
               height="50"
               class="w-40 h-40 mt-8"
             />
-
             <div class="text-center md:text-left mt-4 font-display">
               <p class="mt-4">
                 Thank you for joining WE TRAVEL! We look forward to sharing your
@@ -101,10 +112,15 @@ const formData = ref({
   name: "",
   email: "",
   message: "",
+  photos: [],
+  Itinerary: null,
 });
 
-const submitForm = () => {
-  console.log("Form submitted:", formData.value);
+const sendEmail = () => {
+  const { name, email, message } = formData.value;
+  const mailtoLink = `mailto:bmaranetaart@gmail.com?subject=Contact%20Form%20Submission&body=Name:%20${name}%0DEmail:%20${email}%0DMessage:%20${message}`;
+
+  window.location.href = mailtoLink;
 };
 </script>
 
