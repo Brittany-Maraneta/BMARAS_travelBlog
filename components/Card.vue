@@ -10,13 +10,11 @@
           alt="title"
           class="h-[300px] w-full bg-cover rounded-t-lg object-cover"
         />
-
         <div class="p-4">
           <h3 class="text-xl mb-2 text-black font-display">
             {{ city.activity }}
           </h3>
           <StarRating :rating="city.activity_star" />
-
           <p class="text-gray-700 h-[200px] text-sm font-serif">
             {{ city.activity_description }}
           </p>
@@ -27,6 +25,7 @@
       </div>
     </div>
   </div>
+
   <div
     class="container mx-auto flex flex-col md:flex-row items-center gap-8 mt-[150px]"
   >
@@ -105,6 +104,7 @@
     </div>
   </div>
 </template>
+
 <script setup>
 import StarRating from "./StarRating.vue";
 import { ref, defineProps } from "vue";
@@ -116,16 +116,13 @@ const props = defineProps({
 });
 
 let IDS;
-
 let citySelected = ref(props.citySelected);
-
 const title = "Title";
 const description = `Description`;
 const suggestedBy = "Suggested by Suggester";
 const imageSrc = "Image Source";
 const altText = "Alt Text";
 const bookNowLink = "Booking Link";
-
 const { data: travel } = await useAsyncData("we_travel", async () => {
   const client = useSupabaseClient();
 

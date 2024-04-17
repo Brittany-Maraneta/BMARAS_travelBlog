@@ -8,8 +8,8 @@
           ">Who is WE TRAVEL?</h1>
           <h1 class="text-2xl font-display text-center font-bold mt-8 max-w-4xl mx-auto">We are travel enthusiasts that love to blog and share our experiences! Explore through the many places travelers have shared about from activities, to food, to stays!</h1>
 
-          <div class="flex justify-center items-center h-screen">
-          <button
+            <div class="flex justify-center items-center h-screen">
+            <button
             class="bg-secondary hover:bg-tri text-white py-1 px-2 rounded-2xl "
             @click="scrollWin"
             v-if="showButton">
@@ -20,12 +20,12 @@
               viewBox="0 0 24 24">
               <path d="M7 10l5 5 5-5z" fill="currentColor" />
               </svg>
-          </button>
+            </button>
+            </div>
           </div>
-  </div>
-    </header>
+         </header>
+       </div>
      </div>
-        </div>
  
     <div class="w-[95%] mx-auto">
       <div class="flex justify-center items-center mt-32 my-32 relative">
@@ -69,9 +69,9 @@
       </div>
     </div>
 
-     <!-- Cards -->
-     <div class="w-[95%] mx-auto mt-[100px] mb-[100px] flex justify-center">
-      <div class="flex flex-col md:flex-row md:space-x-4">
+        <!-- Cards -->
+        <div class="w-[95%] mx-auto mt-[100px] mb-[100px] flex justify-center">
+        <div class="flex flex-col md:flex-row md:space-x-4">
 
         <!-- Card 1 -->
         <div class="bg-lightColor rounded-lg overflow-hidden flex-1/3 relative">
@@ -107,16 +107,14 @@ function handleScroll() {
 }
 
 function scrollWin() {
-  window.scrollBy(0, 660);
+  window.scrollBy(0, 720);
 }
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
 });
 
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
-});
+
 </script>
 
 <style scoped>

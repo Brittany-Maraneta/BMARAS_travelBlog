@@ -7,7 +7,7 @@
       <div class="flex justify-center flex-col md:flex-row">
         <div class="w-full md:w-1/2 pr-0 md:pr-4 mb-8 md:mb-0">
           <h2 class="text-2xl font-semibold mb-4 text-center font-display">
-            Join the community or Contact us with questions!
+            Send in your Recommendation or Contact us with questions!
           </h2>
           <form @submit.prevent="sendEmail">
             <div class="mb-4">
@@ -90,9 +90,9 @@
             />
             <div class="text-center md:text-left mt-4 font-display">
               <p class="mt-4">
-                Thank you for joining WE TRAVEL! We look forward to sharing your
-                travel recommendations to the world! Don't forget to share your
-                favorite pictures and videos that go with the Itinerary!
+                We look forward to sharing your travel recommendations to the
+                world! Don't forget to share your favorite pictures and videos
+                that go with the Itinerary to the left!
               </p>
               <p class="mt-4 font-display">
                 If you have any concerns or questions feel free to use the same
