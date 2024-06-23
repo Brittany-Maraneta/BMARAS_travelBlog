@@ -103,6 +103,58 @@
     </p>
     <Card citySelected="Toronto" />
   </div>
+  <div v-if="selectedCity === 'Edmonton'">
+    <h2 class="text-5xl font-bold text-center font-display2">
+      Edmonton, Alberta
+    </h2>
+    <p class="mt-2 max-w-4xl mx-auto text-center font-display text-xl">
+      Edmonton, the vibrant capital of Alberta, is known for its rich cultural
+      scene, picturesque river valley, and vibrant festivals.
+    </p>
+    <Card citySelected="Edmonton" />
+  </div>
+  <div v-if="selectedCity === 'Montreal'">
+    <h2 class="text-5xl font-bold text-center font-display2">
+      Montreal, Quebec
+    </h2>
+    <p class="mt-2 max-w-4xl mx-auto text-center font-display text-xl">
+      Montreal, in Quebec, Canada, is a vibrant city blending history,
+      architecture, and diverse culture. Wander Old Montreal's cobblestone
+      streets, visit iconic landmarks like Notre-Dame Basilica, and savor the
+      city's renowned culinary scene. With bustling nightlife and cultural
+      offerings, Montreal offers an unforgettable urban experience.
+    </p>
+    <Card citySelected="Montreal" />
+  </div>
+  <div v-if="selectedCity === 'Saskatoon'">
+    <h2 class="text-5xl font-bold text-center font-display2">
+      Saskatoon, Saskatchewan
+    </h2>
+    <p class="mt-2 max-w-4xl mx-auto text-center font-display text-xl">
+      Saskatoon, set along the picturesque South Saskatchewan River,
+      harmoniously blends urban sophistication with prairie serenity. This
+      vibrant city boasts a rich tapestry of culture, from Indigenous heritage
+      sites to diverse culinary offerings, all set amidst stunning natural
+      landscapes. With its welcoming atmosphere and diverse attractions,
+      Saskatoon promises an unforgettable experience that captivates the senses
+      and celebrates the essence of Saskatchewan.
+    </p>
+    <Card citySelected="Saskatoon" />
+  </div>
+  <div v-if="selectedCity === 'Regina'">
+    <h2 class="text-5xl font-bold text-center font-display2">
+      Regina, Saskatchewan
+    </h2>
+    <p class="mt-2 max-w-4xl mx-auto text-center font-display text-xl">
+      Regina, the capital city of Saskatchewan, is known for its rich cultural
+      heritage and vibrant community spirit. Home to the Royal Saskatchewan
+      Museum and the iconic RCMP Heritage Centre, it offers a blend of
+      historical and modern attractions. With its expansive Wascana Centre park
+      and diverse culinary scene, Regina provides both residents and visitors
+      with a unique and enjoyable urban experience.
+    </p>
+    <Card citySelected="Regina" />
+  </div>
 </template>
 
 <script setup>
@@ -120,11 +172,16 @@ const isOpen = ref(false);
 const selectedOption = ref("Choose a City");
 const desiredCities = [
   "Calgary",
-  "Vancouver",
-  "Victoria",
+  "Edmonton",
+  "Montreal",
   "Quebec City",
   "Toronto",
+  "Vancouver",
+  "Victoria",
+  "Saskatoon",
+  "Regina",
 ];
+
 let selectedCity = ref("");
 console.log("Debug", citySearched);
 if (citySearched != null) {
